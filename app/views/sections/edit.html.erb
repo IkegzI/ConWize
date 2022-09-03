@@ -1,0 +1,38 @@
+
+<div class=container>
+    <div class=block>
+        <div class=sections>
+            <p> <a href=<%= link_section_level_up(@section) %>>Вернуться</a> </p>
+            <div class=name_section> <%= section_title(@section) %>
+                <%= button_to 'Удалить секцию', @section, :method => :delete %>
+            </div>
+
+            <%= form_with(model: @section, local: true) do |f| %>
+                <%= f.label :name %>
+                <%= f.text_field :name, value: @section.name %>
+
+                <%= f.submit 'Сохранить'%>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<style>
+form {
+    display: flex;
+}
+.block {
+    display: inline-flex;
+    width: 100%;
+}
+.sections {
+    width: 400px;
+    height: 200px;
+    max-width: 40%;
+    background: darkgrey;
+}
+.name_section {
+    display: flex;
+    margin-bottom: 15px;
+}
+</style>

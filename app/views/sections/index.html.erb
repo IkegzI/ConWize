@@ -1,0 +1,32 @@
+<div class=container>
+    <div class=block>
+        <div class=sections>
+        <p> <%= section_title(@section) %> </p>
+        <ul>
+            <% @sections.each do |item| %>
+            <div class=section>
+                <li>
+                    <a class=name href="/sections/<%= item.id %>"><%= item.name %></a>
+                    <a class=edit href=<%= edit_section_path(item.id) %>>&#8942;</a>
+                </li>
+
+            </div>
+            <% end %>
+            <li>
+                <%= link_to 'Добавить секцию', new_section_path(id: 0) %>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+a.edit {
+    display: inline-block;
+    text-align: right;
+}
+a.name {
+    width: 80%;
+    display: inline-block;
+}
+</style>

@@ -1,0 +1,10 @@
+<div class=block>
+    <div class=section>
+    <p> <%= section_title(@section) %> </p>
+    <ul>
+        <% @sections.each do |item| %>
+        <li><a href="/dashboard/<%= item.id %>"><%= item.name %></a></li>
+        <% end %>
+    </ul>
+    </div>
+</div>

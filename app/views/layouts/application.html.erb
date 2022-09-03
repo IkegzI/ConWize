@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conwize</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+
+<style>
+.block {
+    display: inline-flex;
+}
+.sections {
+    width: 400px;
+    max-width: 40%;
+    background: darkgrey;
+}
+.books {
+    width: 400px;
+    max-width: 70%;
+    background: blanchedalmond;
+}
+.edit {
+    display: inline-block;
+    text-align: right;
+}
+.name {
+    width: 80%;
+    display: inline-block;
+}
+span.name {
+    margin: 4px;
+}
+</style>

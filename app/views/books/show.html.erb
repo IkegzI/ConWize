@@ -1,0 +1,16 @@
+
+<div class=container>
+    <div class=block>
+        <div class=sections>
+            <p><a href=<%= link_section(@section) %>>Вернуться к <%= section_title(@section) %></a></p>
+        <ul>
+            <li><%= @book.name %></li>
+        </ul>
+        </div>
+        <div class=books>
+            <p><%= @book.description %></p>
+        </div>
+    </div>
+</div>
+
+<style>

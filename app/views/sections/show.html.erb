@@ -1,0 +1,42 @@
+
+<div class=container>
+    <div class=block>
+        <div class=sections>
+        <p> <a href=<%= link_section_level_up(@section) %>>Вернуться</a> </p>
+        <ul>
+            <li> <span class=name href=> <%= section_title(@section) %></span>
+                 <a class=edit href=<%= edit_section_path(@section.id) %>>&#8942;</a>
+            </li>
+            <ul>
+                <% @sections.each do |item| %>
+                    <li>
+                        <a class=name href="/sections/<%= item.id %>"><%= item.name %></a>
+                        <a class=edit href=<%= edit_section_path(item.id) %>>&#8942;</a>
+                    </li>
+                <% end %>
+                <li>
+                    <%= link_to 'Добавить секцию', new_section_path(id: @section.id) %>
+                </li>
+            </ul>
+        </ul>
+        </div>
+        <div class=books>
+        <%= link_to 'Добавить книгу', new_section_book_path(section_id: @section.id) %>
+        <ul>
+            <% @books.each do |item| %>
+                <li class=book>
+                    <a href="/sections/<%= @section.id %>/books/<%= item.id %>"><%= item.name %></a>
+                    <a href="/sections/<%= @section.id %>/books/<%= item.id %>/edit">изменить</a>
+                    <%= button_to 'Удалить книгу', section_book_path(@section.id, item.id), :method => :delete %>
+                </li>
+            <% end %>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+li.book {
+    margin: 15px;
+}
+</style>

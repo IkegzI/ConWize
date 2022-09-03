@@ -1,0 +1,33 @@
+
+<div class=container>
+    <div class=block>
+        <div class=sections>
+            <p>Добавить секцию</p>
+            <%= form_with(model: @section, local: true) do |f| %>
+                <%= f.hidden_field :parent_id, value: @section.parent_id %>
+
+                <%= f.label 'Название секции' %>
+                <%= f.text_field :name %>
+
+                <%= f.submit 'Сохранить'%>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<style>
+.block {
+    display: inline-flex;
+    width: 100%;
+}
+.sections {
+    width: 400px;
+    height: 200px;
+    max-width: 40%;
+    background: darkgrey;
+}
+.name_section {
+    display: flex;
+    margin-bottom: 15px;
+}
+</style>

@@ -1,0 +1,36 @@
+
+<div class=container>
+    <div class=block>
+        <div class=sections>
+            <p>Добавить книгу</p>
+            <%= form_with(model: @book, local: true, url:  section_book_path(@book.section_id, @book.id)) do |f| %>
+                <%= f.hidden_field :section_id, value: @book.section_id %>
+
+                <%= f.label 'Название книги' %>
+                <%= f.text_field :name %>
+
+                <%= f.label 'Описание' %>
+                <%= f.text_field :description %>
+
+                <%= f.submit 'Сохранить'%>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<style>
+.block {
+    display: inline-flex;
+    width: 100%;
+}
+.sections {
+    width: 400px;
+    height: 200px;
+    max-width: 40%;
+    background: darkgrey;
+}
+.name_section {
+    display: flex;
+    margin-bottom: 15px;
+}
+</style>
